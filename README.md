@@ -1,27 +1,43 @@
-# HeroesApp
+# Person System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+Este es un sistema para la evaluación propuesta para ver las habilidades que presenta el candidato
+El sistema está hecho en diversas tecnologías como son:
 
-## Development server
+- [node.js], como BanckEnd
+- [Express] como framework de nodejs
+- [AngularJS], como FrontEnd
+- Mysql, como base de datos´
+- Docker
+- NGinx
+## Observaciones
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Se trata de implementar los test unitarios, no se alcanza a realizar debido a la falta de tiempo..
 
-## Code scaffolding
+Se crea un backend con node js usando expres, conectado directamente con Mysql. Estas dos instancias se montan a través de una imagen dentro de un contenedor en Docker, comunicandonsen a través de un proxy inverso.
+Se usa Angular para el frontend, comunicandose directamente con Node para las peticiones de las rutas expuestas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+Descarcar primero los dos repositorios que se encontraran en lñas siguientes URLs 
+- [BackEnd](https://github.com/PEscobar6/programming-skills) acá se encontrará el repo para la configuración del backend y los archivos para levantar el contenedor de Docker.
+- [FrontEnd](https://github.com/PEscobar6/programmin-skills-angular) acá se encontrará el repositorio para el frontend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Install the dependencies and devDependencies and start the server.
 
-## Running unit tests
+### Sólo para el backend
+```sh
+cd programming-skills | cd programming-skills
+npm i
+docker-compose build
+docker-compose up
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Sólo para el frontend
 
-## Running end-to-end tests
+```sh
+cd programming-skills | cd programming-skills
+npm i
+```
+##### Running unit tests frontend
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Correr el comando `ng test` para ejecutar los test vía [Karma](https://karma-runner.github.io).

@@ -1,0 +1,33 @@
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title> {{ person.fullname }} </mat-card-title>
+        <mat-card-subtitle> {{ person.birth }} </mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="person | imagen">
+
+    <mat-card-content>
+        <h3>Padres</h3>
+        <p>
+            <strong>Nombre del padre</strong> {{ person.id_father ? person.id_father : 'No tiene'}}
+            <br>
+            <strong> Nombre de la madre: </strong> {{ person.id_mother ? person.id_mother : 'No tiene'}}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button 
+                color="warn"
+                [routerLink]="['/persons', person.id ]">
+            Leer más...
+        </button>
+
+        <button mat-button 
+                color="info"
+                [routerLink]="['/persons/editar', person.id ]">
+            Editar
+        </button>
+    </mat-card-actions>
+
+</mat-card>
